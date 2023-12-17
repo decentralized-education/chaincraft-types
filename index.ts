@@ -1,6 +1,7 @@
 export interface Task {
     filters: Filter[][]
     action: Action
+    sender?: string
 }
 export enum ActionKind {
     ONCHAIN = 'ONCHAIN',
