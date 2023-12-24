@@ -10,7 +10,7 @@ export enum ActionKind {
 }
 export interface Action {
     type: ActionType
-    kind: ActionKind
+    kind?: ActionKind
     toAddress?: string
     fromAddress?: string
     tokenAddress?: string // token address
