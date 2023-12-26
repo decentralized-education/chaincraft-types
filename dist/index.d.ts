@@ -9,6 +9,7 @@ export declare enum ActionKind {
     NOTIFICATION = "NOTIFICATION"
 }
 export interface Action {
+    id?: string;
     type: ActionType;
     kind?: ActionKind;
     toAddress?: string;
@@ -44,23 +45,13 @@ export declare enum ActionFieldType {
     TO_TOKEN_ADDRESS = "toTokenAddress",
     VALUE = "value"
 }
-export interface IActionInput {
-    target: ActionFieldType;
-    type: ActionInputType;
-    placeholder: string;
-    description?: string;
-    initialValue?: string;
-    name?: string;
-    required?: boolean;
-    decimalsFrom?: ActionFieldType;
-    defaultValue?: string;
-}
 export interface IActionSecret {
     name: string;
     placeholder?: string;
     description?: string;
 }
 export interface Filter {
+    id?: string;
     type?: FilterType;
     value?: string;
     condition?: FilterCondition;

@@ -9,6 +9,7 @@ export enum ActionKind {
     NOTIFICATION = 'NOTIFICATION',
 }
 export interface Action {
+    id: string
     type: ActionType
     kind?: ActionKind
     toAddress?: string
@@ -29,6 +30,7 @@ export enum ActionType {
     DEPOSIT_AAVE = 'DEPOSIT_AAVE',
     WITHDRAW_AAVE = 'WITHDRAW_AAVE',
     BORROW_AAVE = 'BORROW_AAVE',
+    CUSTOM = 'CUSTOM'
 }
 export enum ActionInputType {
     ADDRESS = 'ADDRESS',
@@ -63,6 +65,7 @@ export interface IActionSecret {
 }
 
 export interface Filter {
+    id?: string
     type?: FilterType
     value?: string
     condition?: FilterCondition
@@ -84,4 +87,5 @@ export enum FilterType {
     BLOCKNUMBER = 'BLOCKNUMBER',
     TIMESTAMP = 'TIMESTAMP',
     ALLOWANCE = "ALLOWANCE",
+    CUSTOM = "CUSTOM"
 }
