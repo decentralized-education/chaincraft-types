@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FilterType = exports.FilterCondition = exports.ActionFieldType = exports.ActionInputType = exports.ActionType = exports.ActionKind = void 0;
+exports.FilterType = exports.FilterCondition = exports.ActionFieldType = exports.InputType = exports.ActionType = exports.ActionKind = void 0;
 var ActionKind;
 (function (ActionKind) {
     ActionKind["ONCHAIN"] = "ONCHAIN";
@@ -20,13 +20,13 @@ var ActionType;
     ActionType["BORROW_AAVE"] = "BORROW_AAVE";
     ActionType["CUSTOM"] = "CUSTOM";
 })(ActionType || (exports.ActionType = ActionType = {}));
-var ActionInputType;
-(function (ActionInputType) {
-    ActionInputType["ADDRESS"] = "ADDRESS";
-    ActionInputType["ERC_20_COIN_ADDRESS"] = "ERC_20_COIN_ADDRESS";
-    ActionInputType["NUMBER"] = "NUMBER";
-    ActionInputType["STRING"] = "STRING";
-})(ActionInputType || (exports.ActionInputType = ActionInputType = {}));
+var InputType;
+(function (InputType) {
+    InputType["ADDRESS"] = "ADDRESS";
+    InputType["ERC_20_COIN_ADDRESS"] = "ERC_20_COIN_ADDRESS";
+    InputType["NUMBER"] = "NUMBER";
+    InputType["STRING"] = "STRING";
+})(InputType || (exports.InputType = InputType = {}));
 var ActionFieldType;
 (function (ActionFieldType) {
     ActionFieldType["FROM_ADDRESS"] = "fromAddress";
