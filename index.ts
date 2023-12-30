@@ -32,7 +32,7 @@ export enum ActionType {
     BORROW_AAVE = 'BORROW_AAVE',
     CUSTOM = 'CUSTOM'
 }
-export enum ActionInputType {
+export enum InputType {
     ADDRESS = 'ADDRESS',
     ERC_20_COIN_ADDRESS = 'ERC_20_COIN_ADDRESS',
     NUMBER = 'NUMBER',
@@ -49,7 +49,7 @@ export enum ActionFieldType {
 
 export interface IActionInput {
     target: ActionFieldType
-    type: ActionInputType
+    type: InputType
     placeholder: string
     description?: string
     initialValue?: string
