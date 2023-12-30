@@ -18,6 +18,7 @@ var ActionType;
     ActionType["DEPOSIT_AAVE"] = "DEPOSIT_AAVE";
     ActionType["WITHDRAW_AAVE"] = "WITHDRAW_AAVE";
     ActionType["BORROW_AAVE"] = "BORROW_AAVE";
+    ActionType["CUSTOM"] = "CUSTOM";
 })(ActionType || (exports.ActionType = ActionType = {}));
 var ActionInputType;
 (function (ActionInputType) {
@@ -49,4 +50,5 @@ var FilterType;
     FilterType["BLOCKNUMBER"] = "BLOCKNUMBER";
     FilterType["TIMESTAMP"] = "TIMESTAMP";
     FilterType["ALLOWANCE"] = "ALLOWANCE";
+    FilterType["CUSTOM"] = "CUSTOM";
 })(FilterType || (exports.FilterType = FilterType = {}));
