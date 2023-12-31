@@ -37,6 +37,7 @@ export enum InputType {
     ERC_20_COIN_ADDRESS = 'ERC_20_COIN_ADDRESS',
     NUMBER = 'NUMBER',
     STRING = 'STRING',
+    DATETIME = 'DATETIME'
 }
 export enum ActionFieldType {
     FROM_ADDRESS = 'fromAddress',
