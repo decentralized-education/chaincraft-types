@@ -26,6 +26,7 @@ var InputType;
     InputType["ERC_20_COIN_ADDRESS"] = "ERC_20_COIN_ADDRESS";
     InputType["NUMBER"] = "NUMBER";
     InputType["STRING"] = "STRING";
+    InputType["DATETIME"] = "DATETIME";
 })(InputType || (exports.InputType = InputType = {}));
 var ActionFieldType;
 (function (ActionFieldType) {
