@@ -58,12 +58,6 @@ export interface IActionInput {
     decimalsFrom?: ActionFieldType;
     defaultValue?: string;
 }
-export interface IActionSecret {
-    name: string;
-    description?: string;
-    data: string;
-    secretId: string;
-}
 export interface Filter {
     id?: string;
     type?: FilterType;
