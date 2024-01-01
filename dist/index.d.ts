@@ -60,8 +60,9 @@ export interface IActionInput {
 }
 export interface IActionSecret {
     name: string;
-    placeholder?: string;
     description?: string;
+    data: string;
+    secretId: string;
 }
 export interface Filter {
     id?: string;
