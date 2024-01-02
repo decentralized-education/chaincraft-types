@@ -52,4 +52,5 @@ var FilterType;
     FilterType["TIMESTAMP"] = "TIMESTAMP";
     FilterType["ALLOWANCE"] = "ALLOWANCE";
     FilterType["CUSTOM"] = "CUSTOM";
+    FilterType["NEWSAPI"] = "NEWSAPI";
 })(FilterType || (exports.FilterType = FilterType = {}));

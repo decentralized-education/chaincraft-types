@@ -79,5 +79,6 @@ export declare enum FilterType {
     BLOCKNUMBER = "BLOCKNUMBER",
     TIMESTAMP = "TIMESTAMP",
     ALLOWANCE = "ALLOWANCE",
-    CUSTOM = "CUSTOM"
+    CUSTOM = "CUSTOM",
+    NEWSAPI = "NEWSAPI"
 }
