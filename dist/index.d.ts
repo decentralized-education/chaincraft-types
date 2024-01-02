@@ -66,6 +66,7 @@ export interface Filter {
     toAddress?: string;
     fromAddress?: string;
     tokenAddress?: string;
+    data?: object;
 }
 export declare enum FilterCondition {
     GREATER = "GREATER",
