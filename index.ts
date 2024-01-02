@@ -68,6 +68,7 @@ export interface Filter {
     toAddress?: string
     fromAddress?: string
     tokenAddress?: string
+    data?: object
 }
 
 
