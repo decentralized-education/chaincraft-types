@@ -9,8 +9,8 @@ export declare enum ActionKind {
     NOTIFICATION = "NOTIFICATION"
 }
 export interface Action {
-    id: string;
-    type: ActionType;
+    id?: string;
+    type?: ActionType;
     kind?: ActionKind;
     toAddress?: string;
     fromAddress?: string;
