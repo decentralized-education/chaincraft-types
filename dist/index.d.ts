@@ -18,7 +18,7 @@ export interface Action {
     fromTokenAddress?: string;
     toTokenAddress?: string;
     value?: string;
-    data?: string;
+    data?: any;
 }
 export declare enum ActionType {
     SEND_NATIVE_ASSET = "SEND_NATIVE_ASSET",
