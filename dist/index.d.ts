@@ -38,7 +38,8 @@ export declare enum InputType {
     NUMBER = "NUMBER",
     STRING = "STRING",
     DATETIME = "DATETIME",
-    CHAIN = "CHAIN"
+    CHAIN = "CHAIN",
+    SELECT = "SELECT"
 }
 export declare enum ActionFieldType {
     FROM_ADDRESS = "fromAddress",

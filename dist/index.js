@@ -28,6 +28,7 @@ var InputType;
     InputType["STRING"] = "STRING";
     InputType["DATETIME"] = "DATETIME";
     InputType["CHAIN"] = "CHAIN";
+    InputType["SELECT"] = "SELECT";
 })(InputType || (exports.InputType = InputType = {}));
 var ActionFieldType;
 (function (ActionFieldType) {
