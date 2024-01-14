@@ -55,4 +55,7 @@ var FilterType;
     FilterType["ALLOWANCE"] = "ALLOWANCE";
     FilterType["CUSTOM"] = "CUSTOM";
     FilterType["NEWSAPI"] = "NEWSAPI";
+    FilterType["SPELL_SUCCESSFUL"] = "SPELL_SUCCESSFUL";
+    FilterType["SPELL_FAILED"] = "SPELL_FAILED";
+    FilterType["SPELL_COMPLETED"] = "SPELL_COMPLETED";
 })(FilterType || (exports.FilterType = FilterType = {}));
