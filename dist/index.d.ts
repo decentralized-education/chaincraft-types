@@ -89,3 +89,9 @@ export declare enum FilterType {
     SPELL_FAILED = "SPELL_FAILED",
     SPELL_COMPLETED = "SPELL_COMPLETED"
 }
+export declare enum ENVIRONMENT {
+    BROWSER = "BROWSER",
+    SERVER = "SERVER",
+    IOS = "IOS",
+    ANDROID = "ANDROID"
+}

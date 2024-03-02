@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FilterType = exports.FilterCondition = exports.ActionFieldType = exports.InputType = exports.ActionType = exports.ActionKind = void 0;
+exports.ENVIRONMENT = exports.FilterType = exports.FilterCondition = exports.ActionFieldType = exports.InputType = exports.ActionType = exports.ActionKind = void 0;
 var ActionKind;
 (function (ActionKind) {
     ActionKind["ONCHAIN"] = "ONCHAIN";
@@ -60,3 +60,10 @@ var FilterType;
     FilterType["SPELL_FAILED"] = "SPELL_FAILED";
     FilterType["SPELL_COMPLETED"] = "SPELL_COMPLETED";
 })(FilterType || (exports.FilterType = FilterType = {}));
+var ENVIRONMENT;
+(function (ENVIRONMENT) {
+    ENVIRONMENT["BROWSER"] = "BROWSER";
+    ENVIRONMENT["SERVER"] = "SERVER";
+    ENVIRONMENT["IOS"] = "IOS";
+    ENVIRONMENT["ANDROID"] = "ANDROID";
+})(ENVIRONMENT || (exports.ENVIRONMENT = ENVIRONMENT = {}));
