@@ -99,3 +99,9 @@ export enum ENVIRONMENT{
     IOS = "IOS",
     ANDROID = "ANDROID"
 }
+
+export enum ChainType {
+  ETHEREUM = "ethereum",
+  SOLANA = "solana",
+  TON = "ton",
+}
