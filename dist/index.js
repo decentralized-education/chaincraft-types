@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ENVIRONMENT = exports.FilterType = exports.FilterCondition = exports.ActionFieldType = exports.InputType = exports.ActionType = exports.ActionKind = void 0;
+exports.ChainType = exports.ENVIRONMENT = exports.FilterType = exports.FilterCondition = exports.ActionFieldType = exports.InputType = exports.ActionType = exports.ActionKind = void 0;
 var ActionKind;
 (function (ActionKind) {
     ActionKind["ONCHAIN"] = "ONCHAIN";
@@ -67,3 +67,9 @@ var ENVIRONMENT;
     ENVIRONMENT["IOS"] = "IOS";
     ENVIRONMENT["ANDROID"] = "ANDROID";
 })(ENVIRONMENT || (exports.ENVIRONMENT = ENVIRONMENT = {}));
+var ChainType;
+(function (ChainType) {
+    ChainType["ETHEREUM"] = "ethereum";
+    ChainType["SOLANA"] = "solana";
+    ChainType["TON"] = "ton";
+})(ChainType || (exports.ChainType = ChainType = {}));
