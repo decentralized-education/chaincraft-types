@@ -1,12 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChainType = exports.ENVIRONMENT = exports.FilterType = exports.FilterCondition = exports.ActionFieldType = exports.InputType = exports.ActionType = exports.ActionKind = void 0;
+exports.ChainType = exports.ENVIRONMENT = exports.FilterType = exports.FilterCondition = exports.InteractionType = exports.ActionFieldType = exports.InputType = exports.ActionType = exports.EXECUTOR = exports.ActionKind = void 0;
 var ActionKind;
 (function (ActionKind) {
     ActionKind["ONCHAIN"] = "ONCHAIN";
     ActionKind["OFFCHAIN"] = "OFFCHAIN";
     ActionKind["NOTIFICATION"] = "NOTIFICATION";
 })(ActionKind || (exports.ActionKind = ActionKind = {}));
+var EXECUTOR;
+(function (EXECUTOR) {
+    EXECUTOR["USER"] = "user";
+    EXECUTOR["AUTO"] = "auto";
+})(EXECUTOR || (exports.EXECUTOR = EXECUTOR = {}));
 var ActionType;
 (function (ActionType) {
     ActionType["SEND_NATIVE_ASSET"] = "SEND_NATIVE_ASSET";
@@ -39,7 +44,13 @@ var ActionFieldType;
     ActionFieldType["FROM_TOKEN_ADDRESS"] = "fromTokenAddress";
     ActionFieldType["TO_TOKEN_ADDRESS"] = "toTokenAddress";
     ActionFieldType["VALUE"] = "value";
+    ActionFieldType["SLIPPAGE"] = "slippage";
+    ActionFieldType["MAXGAS"] = "maxGas";
 })(ActionFieldType || (exports.ActionFieldType = ActionFieldType = {}));
+var InteractionType;
+(function (InteractionType) {
+    InteractionType["ESTIMATE"] = "ESTIMATE";
+})(InteractionType || (exports.InteractionType = InteractionType = {}));
 var FilterCondition;
 (function (FilterCondition) {
     FilterCondition["GREATER"] = "GREATER";

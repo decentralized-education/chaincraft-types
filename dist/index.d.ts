@@ -19,6 +19,27 @@ export interface Action {
     toTokenAddress?: string;
     value?: string;
     data?: any;
+    slippage?: string;
+    maxGas?: string;
+    steps?: Step[];
+}
+export declare enum EXECUTOR {
+    USER = "user",
+    AUTO = "auto"
+}
+export type Step = {
+    order: number;
+    id: string;
+    status: ExecutionStatus;
+    executor: EXECUTOR;
+};
+export declare enum ExecutionStatus {
+    PENDING = "pending",
+    SUCCESS = "success",
+    FAILED = "failed",
+    CANCELLED = "cancelled",
+    PROCESSING = "processing",
+    WAITING = "waiting"
 }
 export declare enum ActionType {
     SEND_NATIVE_ASSET = "SEND_NATIVE_ASSET",
@@ -48,7 +69,9 @@ export declare enum ActionFieldType {
     TOKEN_ADDRESS = "tokenAddress",
     FROM_TOKEN_ADDRESS = "fromTokenAddress",
     TO_TOKEN_ADDRESS = "toTokenAddress",
-    VALUE = "value"
+    VALUE = "value",
+    SLIPPAGE = "slippage",
+    MAXGAS = "maxGas"
 }
 export interface IActionInput {
     target: ActionFieldType;
@@ -71,6 +94,23 @@ export interface Filter {
     tokenAddress?: string;
     data?: object;
 }
+export declare enum InteractionType {
+    ESTIMATE = "ESTIMATE"
+}
+export interface EstimateInteraction {
+    type: InteractionType;
+    fromChain?: string;
+    toChain?: string;
+    fromAmount?: string;
+    toAmount?: string;
+    fromToken?: string;
+    toToken?: string;
+    approvalNeeded?: boolean;
+    gasFee?: string;
+    tx?: any;
+    message?: string;
+}
+export type ActionUserInteraction = EstimateInteraction;
 export declare enum FilterCondition {
     GREATER = "GREATER",
     LESS = "LESS",

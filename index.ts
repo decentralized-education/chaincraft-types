@@ -19,6 +19,27 @@ export interface Action {
     toTokenAddress?: string
     value?: string
     data?: any
+    slippage?: string
+    maxGas?: string
+    steps?: Step[]
+}
+export enum EXECUTOR {
+    USER = 'user',
+    AUTO = 'auto',
+}
+export type Step = {
+    order: number
+    id: string
+    status: ExecutionStatus
+    executor: EXECUTOR
+}
+export declare enum ExecutionStatus {
+    PENDING = 'pending',
+    SUCCESS = 'success',
+    FAILED = 'failed',
+    CANCELLED = 'cancelled',
+    PROCESSING = 'processing',
+    WAITING = 'waiting'
 }
 export enum ActionType {
     SEND_NATIVE_ASSET = 'SEND_NATIVE_ASSET',
@@ -30,7 +51,7 @@ export enum ActionType {
     DEPOSIT_AAVE = 'DEPOSIT_AAVE',
     WITHDRAW_AAVE = 'WITHDRAW_AAVE',
     BORROW_AAVE = 'BORROW_AAVE',
-    CUSTOM = 'CUSTOM'
+    CUSTOM = 'CUSTOM',
 }
 export enum InputType {
     ADDRESS = 'ADDRESS',
@@ -38,9 +59,9 @@ export enum InputType {
     NUMBER = 'NUMBER',
     STRING = 'STRING',
     DATETIME = 'DATETIME',
-    CHAIN = "CHAIN",
-    SELECT = "SELECT",
-    SPELL = "SPELL"
+    CHAIN = 'CHAIN',
+    SELECT = 'SELECT',
+    SPELL = 'SPELL',
 }
 export enum ActionFieldType {
     FROM_ADDRESS = 'fromAddress',
@@ -49,6 +70,8 @@ export enum ActionFieldType {
     FROM_TOKEN_ADDRESS = 'fromTokenAddress',
     TO_TOKEN_ADDRESS = 'toTokenAddress',
     VALUE = 'value',
+    SLIPPAGE = 'slippage',
+    MAXGAS = 'maxGas',
 }
 
 export interface IActionInput {
@@ -74,34 +97,53 @@ export interface Filter {
     data?: object
 }
 
+export enum InteractionType {
+    ESTIMATE = 'ESTIMATE'
+}
+
+export interface EstimateInteraction {
+    type: InteractionType
+    fromChain?: string
+    toChain?: string
+    fromAmount?: string
+    toAmount?: string
+    fromToken?: string
+    toToken?: string
+    approvalNeeded?: boolean
+    gasFee?: string
+    tx?: any
+    message?: string
+}
+
+export type ActionUserInteraction = EstimateInteraction // | OtherInteraction | ...
 
 export enum FilterCondition {
     GREATER = 'GREATER',
     LESS = 'LESS',
     EQUAL = 'EQUAL',
-    GREATEROREQUAL = "GREATEROREQUAL",
-    LESSOREQUAL = "LESSOREQUAL",
+    GREATEROREQUAL = 'GREATEROREQUAL',
+    LESSOREQUAL = 'LESSOREQUAL',
 }
 export enum FilterType {
     GASPRICE = 'GASPRICE',
     BLOCKNUMBER = 'BLOCKNUMBER',
     TIMESTAMP = 'TIMESTAMP',
-    ALLOWANCE = "ALLOWANCE",
-    CUSTOM = "CUSTOM",
-    NEWSAPI = "NEWSAPI",
-    SPELL_SUCCESSFUL = "SPELL_SUCCESSFUL",
-    SPELL_FAILED = "SPELL_FAILED",
-    SPELL_COMPLETED = "SPELL_COMPLETED"
+    ALLOWANCE = 'ALLOWANCE',
+    CUSTOM = 'CUSTOM',
+    NEWSAPI = 'NEWSAPI',
+    SPELL_SUCCESSFUL = 'SPELL_SUCCESSFUL',
+    SPELL_FAILED = 'SPELL_FAILED',
+    SPELL_COMPLETED = 'SPELL_COMPLETED',
 }
-export enum ENVIRONMENT{
-    BROWSER = "BROWSER",
-    SERVER = "SERVER",
-    IOS = "IOS",
-    ANDROID = "ANDROID"
+export enum ENVIRONMENT {
+    BROWSER = 'BROWSER',
+    SERVER = 'SERVER',
+    IOS = 'IOS',
+    ANDROID = 'ANDROID',
 }
 
 export enum ChainType {
-  ETHEREUM = "ethereum",
-  SOLANA = "solana",
-  TON = "ton",
+    ETHEREUM = 'ethereum',
+    SOLANA = 'solana',
+    TON = 'ton',
 }
