@@ -1,3 +1,6 @@
+import { StaticJsonRpcProvider } from '@ethersproject/providers'
+import { BigNumber } from 'ethers'
+
 export interface Task {
     filters: Filter[][]
     action: Action
@@ -39,7 +42,7 @@ export declare enum ExecutionStatus {
     FAILED = 'failed',
     CANCELLED = 'cancelled',
     PROCESSING = 'processing',
-    WAITING = 'waiting'
+    WAITING = 'waiting',
 }
 export enum ActionType {
     SEND_NATIVE_ASSET = 'SEND_NATIVE_ASSET',
@@ -98,7 +101,7 @@ export interface Filter {
 }
 
 export enum InteractionType {
-    ESTIMATE = 'ESTIMATE'
+    ESTIMATE = 'ESTIMATE',
 }
 
 export interface EstimateInteraction {
@@ -146,4 +149,76 @@ export enum ChainType {
     ETHEREUM = 'ethereum',
     SOLANA = 'solana',
     TON = 'ton',
+}
+
+// W3F
+
+export interface Web3FunctionContextData {
+    gelatoArgs: {
+        chainId: number
+        gasPrice: string
+        taskId?: string
+    }
+    rpcProviderUrl?: string
+    userArgs: Web3FunctionUserArgs
+    secrets: {
+        [key: string]: string | undefined
+    }
+    storage: {
+        [key: string]: string | undefined
+    }
+}
+export interface Web3FunctionContext {
+    gelatoArgs: {
+        chainId: number
+        gasPrice: BigNumber
+        taskId?: string
+    }
+    multiChainProvider: Web3FunctionMultiChainProvider
+    userArgs: Web3FunctionUserArgs
+    secrets: {
+        get(key: string): Promise<string | undefined>
+    }
+    storage: {
+        get(key: string): Promise<string | undefined>
+        set(key: string, value: string): Promise<void>
+        delete(key: string): Promise<void>
+    }
+}
+
+export declare class Web3FunctionMultiChainProvider {
+    private _proxyRpcUrlBase
+    private _rateLimitCallback
+    private _providers
+    private _defaultProvider
+    constructor(proxyRpcUrlBase: string, defaultChainId: number, rateLimitCallBack: () => void)
+    default(): StaticJsonRpcProvider
+    chainId(chainId: number): StaticJsonRpcProvider
+    private _getProviderOfChainId
+    private _subscribeProviderEvents
+}
+
+export interface Web3FunctionLocalContext extends Web3FunctionContext {
+    multiChainProvider: any
+    environment: string
+}
+
+export interface Web3FunctionUserArgs {
+    [key: string]: string | number | boolean | string[] | number[] | boolean[]
+}
+
+export interface Web3FunctionContextData {
+    gelatoArgs: {
+        chainId: number
+        gasPrice: string
+        taskId?: string
+    }
+    rpcProviderUrl?: string
+    userArgs: Web3FunctionUserArgs
+    secrets: {
+        [key: string]: string | undefined
+    }
+    storage: {
+        [key: string]: string | undefined
+    }
 }
